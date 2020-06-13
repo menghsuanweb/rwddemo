@@ -1,0 +1,113 @@
+/* 建議不要直接修改BS的CSS 而是另開自己的CSS將BS CSS複製過來,並利用優先序 後蓋前的特性去做 */
+body {
+  font-family: "Oswald", "Noto Sans TC", Arial, "Microsoft JhengHei", sans-serif;
+  background: #eee;
+}
+/* 以＃作為索引 針對img做等比例縮放>新屬性object-fit */
+#myslider img {
+  object-fit: cover;
+}
+
+#myslider .carousel-caption {
+  top: 0;
+  bottom: 0;
+  text-shadow: 1px 1px 2px #781200d8;
+}
+#myslider .carousel-indicators li {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 10px solid transparent;
+}
+/* 無法掌握圖片來源 可以透過css加上濾鏡 filter */
+
+footer > a.position-fixed {
+  right: 5vh;
+	bottom: 5vh;
+	animation: bounce 5s ease infinite;
+  z-index: 999;
+}
+@keyframes bounce {
+  0%,
+  20%,
+  53%,
+  80%,
+  100% {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate(0, 0);
+  }
+  40%,
+  43% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate(0, -30px);
+  }
+
+  70% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate(0, -15px);
+  }
+  90% {
+    transform: translate(0, -4px);
+  }
+}
+#mynav header .active{
+  background: #1599ad;
+  
+}
+#mynav .nav-item{
+  flex: 0 1 13%;/* 控制 flex item 的膨脹及壓縮（縮視窗時） */
+  border: 0;
+  border-bottom: 1px solid #17a2b8;
+}
+#mynav .nav-tabs{
+  border-bottom: 1px solid #17a2b8;
+}
+#mynav .tab-content>.row.active{
+  display: flex;
+}
+#mynav thead tr{
+  border-bottom: 2px solid #17a2b8;
+}
+@media(min-width:992px){
+  #myfacility li:nth-of-type(even)>img{
+    order: 1;
+  }
+}
+#myfacility{
+  background:
+  url(https://picsum.photos/1920/1080?random=1),
+  rgba(0, 255, 255, 0.5);
+  /* 圖片疊合 */
+  background-blend-mode: overlay;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+
+  text-shadow: #333 0.3rem 0.3rem 0.5rem;
+}
+#mytrans iframe{
+  filter: brightness(0.5);
+}
+/* 複習用法 */
+#mymenu a::after{
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  margin: 5px 0;
+  transition: 1s ease;
+}
+#mymenu a.active::after{
+  width: 100%;
+}
+#backtop{
+  opacity: 0;
+  transition: 0.5s ease;
+}
+#backtop.shown{
+  opacity: 1;
+}
+
+
+
